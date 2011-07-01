@@ -1,0 +1,39 @@
+README: WikiFB
+---------------------------------
+CREDITS
+Author: Tyler Hendrickson
+Email: hendrickson (dot) tsh (at) gmail (dot) com
+
+Additional Credits:
+http://www.justin-cook.com/
+http://www.weberdev.com/
+FBCMD Application: http://fbcmd.dtompkins.com/
+---------------------------------
+DESCRIPTION
+
+Runs via the command line, so it's especially good for Cron jobs or scheduled tasks.
+
+As it stands, this is a PHP utility (good for cron jobs) that scrapes a remote web page, parses out links in a defined content area,
+validates the links that work, and saves those to a local file.  The file is then posted to Facebook via the FBCMD application.
+
+This was originally made to automatically get a list WikiLeaks mirrors, pick three of those mirror URLs after validating that they work,
+and then post the links to Facebook.  It was an effort to use Facebook as a means of providing active mirrors via status updates.
+
+However, with some tweaking to both files, WikiFB can be an excellent utility to scrape any remote URL content, parse out what
+you are looking for, and then save that parsed content somewhere.  And you don't need FBCMD installed to do that.
+
+---------------------------------
+CONFIGURATION
+
+For basic usage with FBCMD:
+-Edit the 'index.php' as per the instructions in the comments.
+
+To use as a general utility:
+-Edit 'index.php' and remove/comment out the FBCMD stuff.
+-In 'functions.php', edit the function linkCatchVal() to suit your needs.  Currently it is set up to validate links from "<a href...>" HTML tags,
+but some simple changes can make it do other stuff.
+-Remove/comment out fbCustom() and fbUpdate() functions in 'functions.php'.
+
+---------------------------------
+
+That's it!  Enjoy and contact me for any questions.
